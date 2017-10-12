@@ -306,8 +306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 654df1b7dd6ff42b5a7a18cf3e203abf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  v0: 0
-  g: 0
+  v0: 10
+  g: -9.8
 --- !u!23 &2066606870
 MeshRenderer:
   m_ObjectHideFlags: 0
