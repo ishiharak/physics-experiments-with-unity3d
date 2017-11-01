@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class FreeFall : MonoBehaviour {
 	public float v0, g;
-	public float v;
-	public Vector3 PreviousPosition;
+	float v;
 
 	void Start () {
 		v = v0;
@@ -15,7 +14,6 @@ public class FreeFall : MonoBehaviour {
 		float y = this.transform.position.y;
 		v = v + g * Time.deltaTime;
 		y = y + v * Time.deltaTime;
-		PreviousPosition = this.transform.position;
 		this.transform.position = new Vector3(0f, y, 0f);
 	}
 }
