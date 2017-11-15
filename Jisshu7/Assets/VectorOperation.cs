@@ -8,7 +8,7 @@ public class VectorOperation : MonoBehaviour {
 	void Start () {
 		a = new Vector3(1,2,3);
 		b = new Vector3(4,5,6);
-		Debug.Log(a-b);
+		Debug.Log(a+b);
 	}
 	
 	void Update () {
