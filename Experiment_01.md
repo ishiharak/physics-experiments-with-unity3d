@@ -46,23 +46,23 @@
   1.  スクリプトの基本構造  
     次のプログラムはUnityでC\#スクリプトを新規で作成した状態である。
     
-    ```cs
-    using System.Collections;
-    using System.Collections.Generic;
-    using UnityEngine;
+```cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-    public class MyScript : MonoBehaviour {
-      // Use this for initialization
-      void Start () {
+public class MyScript : MonoBehaviour {
+  // Use this for initialization
+  void Start () {
 
-      }
+  }
 
-      // Update is called once per frame
-      void Update () {
+  // Update is called once per frame
+  void Update () {
 
-      }
-    }
-    ```
+  }
+}
+```
     
     プログラム中で「//」以降の文は（　コメント　）と呼ばれ，プログラムの実行に影響を及ぼさない説明文である。「//」の他に「/\*」と「\*/」で囲む書き方もある。  
     1～2行目はC\#の基本的な命令を，3行目はUnity独自の命令を，4行目以降で省略した名前で書くための命令である。  
