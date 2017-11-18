@@ -11,36 +11,33 @@
 
 ---
 1. 理論
-  1. 操作画面の説明
-  ![screen](media/image1.png)
-    1. Scene（シーン）画面  
-    ゲームに登場する物体（GameObject）の配置を変えるための作業画面
-    1. Game（ゲーム）画面  
-    実際にゲームをプレイするプレイヤーから見える視点を写す画面 シーン内にあるカメラからの視点になる
-    1. Hierarchy（ハイアラキー）画面  
-    シーン内にあるすべての物体が一覧で表示される画面
-    1. Project（プロジェクト）画面  
-    ゲームで使うための部品（プログラムや素材）を置いておくための保管場所
-    1. Inspector（インスペクター）画面  
-    選択した物体の詳細設定を表示するための画面
-  1. Unityの基礎
-    1. GameObjectとComponentの関係  
-    　Scene内に配置できる物体を（　GameObject　）と呼ぶ。GameObjectは（　Component　）と呼ばれる構成要素から成る。ほとんどのComponentは後から追加できるが，GameObjectの種類によっては必須で取り外せないものがある。  
-    （例）  
-    　Cubeは初期状態ではTransformやMesh
- Filterなどの4つのComponentから構成されている。（　Transform　）は物体の位置・回転・大きさを指定する構成要素であり，ほとんどのGameObjectにとって必須である。（　Mesh
- Filter　）は物体の形状を指定するためのComponentである。
- また，Directional
- Lightも同様に（　Transform　）のComponentが必須である。
+    1. 操作画面の説明
+    ![screen](media/image1.png)
+        1. Scene（シーン）画面  
+        ゲームに登場する物体（GameObject）の配置を変えるための作業画面
+        1. Game（ゲーム）画面  
+        実際にゲームをプレイするプレイヤーから見える視点を写す画面 シーン内にあるカメラからの視点になる
+        1. Hierarchy（ハイアラキー）画面  
+        シーン内にあるすべての物体が一覧で表示される画面
+        1. Project（プロジェクト）画面  
+        ゲームで使うための部品（プログラムや素材）を置いておくための保管場所
+        1. Inspector（インスペクター）画面  
+        選択した物体の詳細設定を表示するための画面
 
-  1. PerspectiveとIsometric  
-  　Persp（Perspective）とは(　透視　)図のことで，遠近感を持たせて描画することをいう。対してIso（Isometric）とは（　投影　）図のことで，物の形を光で投影したような遠近感が無い描画を行うことをいう。Isoは物体の位置調整などに使われる。
+    1. Unityの基礎
+        1. GameObjectとComponentの関係  
+        Scene内に配置できる物体を（　GameObject　）と呼ぶ。GameObjectは（　Component　）と呼ばれる構成要素から成る。ほとんどのComponentは後から追加できるが，GameObjectの種類によっては必須で取り外せないものがある。  
+        （例）  
+        Cubeは初期状態ではTransformやMesh Filterなどの4つのComponentから構成されている。（　Transform　）は物体の位置・回転・大きさを指定する構成要素であり，ほとんどのGameObjectにとって必須である。（　Mesh Filter　）は物体の形状を指定するためのComponentである。 また，Directional Lightも同様に（　Transform　）のComponentが必須である。
+        
+        1. PerspectiveとIsometric  
+        Persp（Perspective）とは(　透視　)図のことで，遠近感を持たせて描画することをいう。対してIso（Isometric）とは（　投影　）図のことで，物の形を光で投影したような遠近感が無い描画を行うことをいう。Isoは物体の位置調整などに使われる。
+    
+        1. Rigidbody  
+        Unityで（　物理演算　）を自動的に行うためのComponentがRigidbodyである。Massは（　質量　）を，Dragは（　抗力　）を，Gravityは（　重力　）を意味する。
 
-  1. Rigidbody  
-  　Unityで（　物理演算　）を自動的に行うためのComponentがRigidbodyである。Massは（　質量　）を，Dragは（　抗力　）を，Gravityは（　重力　）を意味する。
-
-  1. Collider  
-  　Colliderはゲームでいうところの（　当たり判定　）を行うためComponentであり，Colliderを持つ物体同士が重なった場合に衝突（　Collision　）が発生し，それ以上めり込まないように位置調整される。
+        1. Collider  
+        Colliderはゲームでいうところの（　当たり判定　）を行うためComponentであり，Colliderを持つ物体同士が重なった場合に衝突（　Collision　）が発生し，それ以上めり込まないように位置調整される。
 
 1. プログラミングの基礎
   1.  スクリプトの基本構造  
@@ -63,8 +60,7 @@ public class MyScript : MonoBehaviour {
   }
 }
 ```
-    
-    プログラム中で「//」以降の文は（　コメント　）と呼ばれ，プログラムの実行に影響を及ぼさない説明文である。「//」の他に「/\*」と「\*/」で囲む書き方もある。  
+プログラム中で「//」以降の文は（　コメント　）と呼ばれ，プログラムの実行に影響を及ぼさない説明文である。「//」の他に「/\*」と「\*/」で囲む書き方もある。  
     1～2行目はC\#の基本的な命令を，3行目はUnity独自の命令を，4行目以降で省略した名前で書くための命令である。  
     5行目の「MyScript」は自分で自由につけて良い名前で，**ファイル名と同じ** でなければならない。また，「MonoBehaviour」はMyScriptがMonoBehaviourの機能を（　継承　）していることを意味し，後述の「Start」や「Update」を使うために必要となる。なお，8行目のStartや13行目のUpdateのように，命令をひとまとめにして名前を付けたものを（　メソッド　）と呼ぶ。  
     8～10行目の「Startメソッド」は，Updateの呼び出しが始まる前に**一度だけ**呼び出されるメソッドである。主に（　初期化　）をする目的で使われる。  
