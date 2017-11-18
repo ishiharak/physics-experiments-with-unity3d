@@ -33,13 +33,13 @@ S2　　 　　　番
 		したがって，何を基準となる物理量として設定するのが適切であるかは状況に応じて考える必要がある。例えば，「電子の動き」のような微細な現象をメートル基準で扱うのは困難である。  
 		Unityにおいて扱われる数値は無次元であるが，無次元化の基準となる物理量が何であるかを理解しておく必要がある。デフォルトの単位スケールは以下の通り。時間以外についてはRigidbodyコンポーネントが持つ重力加速度プロパティに起因する。なお，重力加速度は変更できる。
 
-    |物理量|スクリプト上の用途|基準となる物理量|
-    |:--:|:--:|:--:|
-    |変位|Transform.positionなど|1 m|
-    |力|Rigidbody.AddForceなど|1 N|
-    |質量|Rigidbody.mass|1 kg|
-    |速度|Rigidbody.velocityなど|1 m/s|
-    |時間|Time.time など|1 s|
+		|物理量|スクリプト上の用途|基準となる物理量|
+		|:--:|:--:|:--:|
+		|変位|Transform.positionなど|1 m|
+		|力|Rigidbody.AddForceなど|1 N|
+		|質量|Rigidbody.mass|1 kg|
+		|速度|Rigidbody.velocityなど|1 m/s|
+		|時間|Time.time など|1 s|
 
 	1. 物体の位置を変える
 		物体の位置の変更方法には，Rigidbodyコンポーネントを使わない方法と使う方法の２種類がある。
@@ -126,26 +126,27 @@ S2　　 　　　番
 	  1. 円運動  
 		2つ軸の軸上で往復運動を行い，位相差を90°にすると円運動となる。  
 		（例8:MoveACircle）xy平面上で半径5 mの円運動を1秒間に1周の回転速度で行う
-		```cs
-		public class MyScript : MonoBehaviour {
-			float x, y;
-			// Use this for initialization
-			void Start () {
-				x = 0f;
-				y = 90f * Mathf.Deg2Rad;
-			}
+		
+			```cs
+			public class MyScript : MonoBehaviour {
+				float x, y;
+				// Use this for initialization
+				void Start () {
+					x = 0f;
+					y = 90f * Mathf.Deg2Rad;
+				}
 
-			// Update is called once per frame
-			void Update () {
-				x = x + 360f * Mathf.Deg2Rad * Time.deltaTime;
-				y = y + 360f * Mathf.Deg2Rad * Time.deltaTime;
-				this.transform.position = new Vector3 (5f * Mathf.Sin(x), 5f * Mathf.Sin(y), 0f);
+				// Update is called once per frame
+				void Update () {
+					x = x + 360f * Mathf.Deg2Rad * Time.deltaTime;
+					y = y + 360f * Mathf.Deg2Rad * Time.deltaTime;
+					this.transform.position = new Vector3 (5f * Mathf.Sin(x), 5f * Mathf.Sin(y), 0f);
+				}
 			}
-		}
-		```
+			```
 
-  1. リサジュー図形  
-    円運動において，2軸の位相差や回転速度（周期）の比率を変化させるだけで，多様な種類の図形を描くことができる。これらはリサジュー図形と呼ばれる。
+	1. リサジュー図形  
+		円運動において，2軸の位相差や回転速度（周期）の比率を変化させるだけで，多様な種類の図形を描くことができる。これらはリサジュー図形と呼ばれる。
 
 1.  実験環境  
 
@@ -155,49 +156,49 @@ S2　　 　　　番
 	|Unity|ゲームエンジン|Unity Technologies|5.6.0|
 
 1.  課題  
-  1. 課題1  
-    シーンKadai1を開き，Spaceキーが押された回数数え，Spaceキーが押されるたびにその回数をConsole画面に表示するスクリプト(CountSpaces)を作成せよ。
-    ヒント：aを1増やすには a = a + 1;と書けば良い。また，短縮してa++;と書いても良い。
-  1. 課題2  
-    シーンKadai2を開き，開始5秒後に，スクリプトが張られた物体を赤色にするスクリプト(TurnRed)を作成せよ。
-    ヒント：開始してからの経過時間はTime.timeで取得できる。Time.timeが5より大きくなったタイミングで赤にすれば良い。
+	1. 課題1  
+		シーンKadai1を開き，Spaceキーが押された回数数え，Spaceキーが押されるたびにその回数をConsole画面に表示するスクリプト(CountSpaces)を作成せよ。
+		ヒント：aを1増やすには a = a + 1;と書けば良い。また，短縮してa++;と書いても良い。
+	1. 課題2  
+		シーンKadai2を開き，開始5秒後に，スクリプトが張られた物体を赤色にするスクリプト(TurnRed)を作成せよ。
+		ヒント：開始してからの経過時間はTime.timeで取得できる。Time.timeが5より大きくなったタイミングで赤にすれば良い。
 
-  1. 課題3  
-    Cubeをposition(0, 0, 0)の位置に設置したシーン(Kadai3)について，キーボードのXキーを押すとCubeのpositionを(1, 0, 0)に，Zキーを押すとCubeのpositionを(-1, 0, 0)にするスクリプト(JumpOneMeter)を作成せよ。
+	1. 課題3  
+		Cubeをposition(0, 0, 0)の位置に設置したシーン(Kadai3)について，キーボードのXキーを押すとCubeのpositionを(1, 0, 0)に，Zキーを押すとCubeのpositionを(-1, 0, 0)にするスクリプト(JumpOneMeter)を作成せよ。
 
-  1. 課題4  
-    Cubeをposition(0, 0, 0)の位置に設置したシーン(Kadai4)について，キーボードの右矢印(RightArrow)キーを押すとCubeをx軸正の向きに1 m移動し，左矢印(LeftArrow)キーを押すとCubeをx軸負の向きに1 m移動するスクリプト(KeepJumping)を作成せよ。
-  ヒント：this.transform.Translateを使う
+	1. 課題4  
+		Cubeをposition(0, 0, 0)の位置に設置したシーン(Kadai4)について，キーボードの右矢印(RightArrow)キーを押すとCubeをx軸正の向きに1 m移動し，左矢印(LeftArrow)キーを押すとCubeをx軸負の向きに1 m移動するスクリプト(KeepJumping)を作成せよ。
+		ヒント：this.transform.Translateを使う
 
-  1. 課題5
-    Cubeをposition(-10, 0, 0)の位置に設置したシーン(Kadai5)について，Cubeを毎秒10 mの速さでx軸正の向きに移動させ，物体のx座標が10を超えた場合は-10に戻し，-10から10へ繰り返し移動するスクリプト(KeepMoving)を作成せよ。
+	1. 課題5
+		Cubeをposition(-10, 0, 0)の位置に設置したシーン(Kadai5)について，Cubeを毎秒10 mの速さでx軸正の向きに移動させ，物体のx座標が10を超えた場合は-10に戻し，-10から10へ繰り返し移動するスクリプト(KeepMoving)を作成せよ。
 
-  1. 課題6
-    Plane上にSphereを設置し，SphereにRigidbodyコンポーネントを取り付けたシーン(Kadai6)について，Sphereをキーボードの矢印キーを使って平面上を自由に移動できるようなスクリプト(MoveFreely)を作成せよ。なお，移動速度は問わない。※AddForceを使用する
+	1. 課題6
+		Plane上にSphereを設置し，SphereにRigidbodyコンポーネントを取り付けたシーン(Kadai6)について，Sphereをキーボードの矢印キーを使って平面上を自由に移動できるようなスクリプト(MoveFreely)を作成せよ。なお，移動速度は問わない。※AddForceを使用する
 
-  1. 課題7
-    Sphereをposition(0, 10, 0)の位置に設置し，Rigidbodyコンポーネントを使って自由落下させるシーン(Kadai7)について，次の機能を満たすスクリプト(Portal)を作成せよ。
-      1. Sphereのy座標が0より小さくなった時に，y座標を10に戻す。
-      1. Spaceキーが押された時，Sphereの速度を0 m/sにする。
-  1. 課題8
-    Unityを使って次表の空欄の値を求めよ。なお，小数点以下3桁まで求めよ。
+	1. 課題7
+		Sphereをposition(0, 10, 0)の位置に設置し，Rigidbodyコンポーネントを使って自由落下させるシーン(Kadai7)について，次の機能を満たすスクリプト(Portal)を作成せよ。
+		1. Sphereのy座標が0より小さくなった時に，y座標を10に戻す。
+		1. Spaceキーが押された時，Sphereの速度を0 m/sにする。
+	1. 課題8
+		Unityを使って次表の空欄の値を求めよ。なお，小数点以下3桁まで求めよ。
 
-    |0°|30°|90°|120°|
-  	|:--:|:--:|:--:|:--:|
-  	|sin||||
-  	|cos||||
+		|0°|30°|90°|120°|
+		|:--:|:--:|:--:|:--:|
+		|sin||||
+		|cos||||
 
-  1. 課題9  
-    Cubeを1つ設置したシーン(Kadai9)について，Cubeにy軸上で振幅3 m，3秒間に1往復の頻度で往復運動をさせるスクリプト(MoveBackAndForth2)を作成せよ。
+	1. 課題9  
+		Cubeを1つ設置したシーン(Kadai9)について，Cubeにy軸上で振幅3 m，3秒間に1往復の頻度で往復運動をさせるスクリプト(MoveBackAndForth2)を作成せよ。
 
-  1. 課題10  
-    Cubeを1つ設置したシーン(Kadai10)について，Cubeにxz平面上で半径5 m，1秒間に0.5回転の円運動(MoveACircle2)をさせよ。
+	1. 課題10  
+		Cubeを1つ設置したシーン(Kadai10)について，Cubeにxz平面上で半径5 m，1秒間に0.5回転の円運動(MoveACircle2)をさせよ。
 
-  1. 課題11  
-    リサジュー図形の中で興味深いと感じたものを１つ選び，図形のスケッチとその図形を描くための条件を記録せよ。
+	1. 課題11  
+		リサジュー図形の中で興味深いと感じたものを１つ選び，図形のスケッチとその図形を描くための条件を記録せよ。
 
-  1. 課題12  
-    Sphereをy軸正の向き（真上）に10 m/sの速さで打ち出した場合，最高到達点の高さは何mであるか。ただし，空気抵抗は考えない(Drag = 0)ものとする。シミュレーション結果と理論値を比較せよ。
+	1. 課題12  
+		Sphereをy軸正の向き（真上）に10 m/sの速さで打ち出した場合，最高到達点の高さは何mであるか。ただし，空気抵抗は考えない(Drag = 0)ものとする。シミュレーション結果と理論値を比較せよ。
 
 1. 考察
-  本実験で行った円運動のシミュレーションは厳密には正確な円（真円）を描いていない。正確な円にならない理由と，できるだけ正確な円を描くための方法とその限界について考察せよ。
+	本実験で行った円運動のシミュレーションは厳密には正確な円（真円）を描いていない。正確な円にならない理由と，できるだけ正確な円を描くための方法とその限界について考察せよ。
