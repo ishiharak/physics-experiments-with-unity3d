@@ -1,138 +1,137 @@
 # 2年 情報実習 1
 ## ～物理演算に触れる～
 
-**S2　　** **　　　番**
+**S2　　 　　　番**
 
-**名前：　　　　　　　　　　　　**
+**名前：**　　　　　　　　　　　　
 
 **提出期限**
 
-**平成　　　年　　　月　　　日**
+平成　　　年　　　月　　　日
 
 ---
 1. 理論
 	1. 操作画面の説明
 	![screen](media/image1.png)
 		1. Scene（シーン）画面  
-		ゲームに登場する物体（GameObject）の配置を変えるための作業画面
+			ゲームに登場する物体（GameObject）の配置を変えるための作業画面
 		1. Game（ゲーム）画面  
-		実際にゲームをプレイするプレイヤーから見える視点を写す画面 シーン内にあるカメラからの視点になる
+			実際にゲームをプレイするプレイヤーから見える視点を写す画面 シーン内にあるカメラからの視点になる
 		1. Hierarchy（ハイアラキー）画面  
-		シーン内にあるすべての物体が一覧で表示される画面
+			シーン内にあるすべての物体が一覧で表示される画面
 		1. Project（プロジェクト）画面  
-		ゲームで使うための部品（プログラムや素材）を置いておくための保管場所
+			ゲームで使うための部品（プログラムや素材）を置いておくための保管場所
 		1. Inspector（インスペクター）画面  
-		選択した物体の詳細設定を表示するための画面
+			選択した物体の詳細設定を表示するための画面
 
 	1. Unityの基礎
 		1. GameObjectとComponentの関係  
-		Scene内に配置できる物体を（　GameObject　）と呼ぶ。GameObjectは（　Component　）と呼ばれる構成要素から成る。ほとんどのComponentは後から追加できるが，GameObjectの種類によっては必須で取り外せないものがある。  
-		（例）Cubeは初期状態ではTransformやMesh Filterなどの4つのComponentから構成されている。（　Transform　）は物体の位置・回転・大きさを指定する構成要素であり，ほとんどのGameObjectにとって必須である。（　Mesh Filter　）は物体の形状を指定するためのComponentである。 また，Directional Lightも同様に（　Transform　）のComponentが必須である。
+			Scene内に配置できる物体を（　GameObject　）と呼ぶ。GameObjectは（　Component　）と呼ばれる構成要素から成る。ほとんどのComponentは後から追加できるが，GameObjectの種類によっては必須で取り外せないものがある。  
+			（例）Cubeは初期状態ではTransformやMesh Filterなどの4つのComponentから構成されている。（　Transform　）は物体の位置・回転・大きさを指定する構成要素であり，ほとんどのGameObjectにとって必須である。（　Mesh Filter　）は物体の形状を指定するためのComponentである。 また，Directional Lightも同様に（　Transform　）のComponentが必須である。
 		1. PerspectiveとIsometric  
-		Persp（Perspective）とは(　透視　)図のことで，遠近感を持たせて描画することをいう。対してIso（Isometric）とは（　投影　）図のことで，物の形を光で投影したような遠近感が無い描画を行うことをいう。Isoは物体の位置調整などに使われる。
+			Persp（Perspective）とは(　透視　)図のことで，遠近感を持たせて描画することをいう。対してIso（Isometric）とは（　投影　）図のことで，物の形を光で投影したような遠近感が無い描画を行うことをいう。Isoは物体の位置調整などに使われる。
 		1. Rigidbody  
-		Unityで（　物理演算　）を自動的に行うためのComponentがRigidbodyである。Massは（　質量　）を，Dragは（　抗力　）を，Gravityは（　重力　）を意味する。
+			Unityで（　物理演算　）を自動的に行うためのComponentがRigidbodyである。Massは（　質量　）を，Dragは（　抗力　）を，Gravityは（　重力　）を意味する。
 		1. Collider  
-		Colliderはゲームでいうところの（　当たり判定　）を行うためComponentであり，Colliderを持つ物体同士が重なった場合に衝突（　Collision　）が発生し，それ以上めり込まないように位置調整される。
+			Colliderはゲームでいうところの（　当たり判定　）を行うためComponentであり，Colliderを持つ物体同士が重なった場合に衝突（　Collision　）が発生し，それ以上めり込まないように位置調整される。
 		
 	1. プログラミングの基礎
 		1.  スクリプトの基本構造  
-		次のプログラムはUnityでC\#スクリプトを新規で作成した状態である。
-```cs
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+			次のプログラムはUnityでC\#スクリプトを新規で作成した状態である。
+			```cs:MyScript.cs
+			using System.Collections;
+			using System.Collections.Generic;
+			using UnityEngine;
 
-public class MyScript : MonoBehaviour {
-  // Use this for initialization
-  void Start () {
+			public class MyScript : MonoBehaviour {
+				// Use this for initialization
+				void Start () {
 
-  }
+				}
 
-  // Update is called once per frame
-  void Update () {
+				// Update is called once per frame
+				void Update () {
 
-  }
-}
-```
-        プログラム中で「//」以降の文は（　コメント　）と呼ばれ，プログラムの実行に影響を及ぼさない説明文である。「//」の他に「/\*」と「\*/」で囲む書き方もある。  
-        1～2行目はC\#の基本的な命令を，3行目はUnity独自の命令を，4行目以降で省略した名前で書くための命令である。  
-        5行目の「MyScript」は自分で自由につけて良い名前で，**ファイル名と同じ** でなければならない。また，「MonoBehaviour」はMyScriptがMonoBehaviourの機能を（　継承　）していることを意味し，後述の「Start」や「Update」を使うために必要となる。なお，8行目のStartや13行目のUpdateのように，命令をひとまとめにして名前を付けたものを（　メソッド　）と呼ぶ。  
-        8～10行目の「Startメソッド」は，Updateの呼び出しが始まる前に**一度だけ**呼び出されるメソッドである。主に（　初期化　）をする目的で使われる。  
-        13～15行目の「Updateメソッド」は，1フレームごとに毎回呼び出される。なお，実行中はコンピュータの負荷によって変わるが1秒間に60フレーム程度が実行されている。1秒間に実行されるフレーム数を（　フレームレート　）と呼び（　FPS　）という単位で表される。物理演算(Rigidbody)に関する命令は，フレームレートが変動すると異常な動作をするため，固定フレームレートで実行される（　FixedUpdate　）メソッドを使用する。
+				}
+			}
+			```
+			プログラム中で「//」以降の文は（　コメント　）と呼ばれ，プログラムの実行に影響を及ぼさない説明文である。「//」の他に「/\*」と「\*/」で囲む書き方もある。  1～2行目はC\#の基本的な命令を，3行目はUnity独自の命令を，4行目以降で省略した名前で書くための命令である。  
+			5行目の「MyScript」は自分で自由につけて良い名前で，**ファイル名と同じ** でなければならない。また，「MonoBehaviour」はMyScriptがMonoBehaviourの機能を（　継承　）していることを意味し，後述の「Start」や「Update」を使うために必要となる。なお，8行目のStartや13行目のUpdateのように，命令をひとまとめにして名前を付けたものを（　メソッド　）と呼ぶ。  
+			8～10行目の「Startメソッド」は，Updateの呼び出しが始まる前に**一度だけ**呼び出されるメソッドである。主に（　初期化　）をする目的で使われる。  
+			13～15行目の「Updateメソッド」は，1フレームごとに毎回呼び出される。なお，実行中はコンピュータの負荷によって変わるが1秒間に60フレーム程度が実行されている。1秒間に実行されるフレーム数を（　フレームレート　）と呼び（　FPS　）という単位で表される。物理演算(Rigidbody)に関する命令は，フレームレートが変動すると異常な動作をするため，固定フレームレートで実行される（　FixedUpdate　）メソッドを使用する。
 
-        1. インデントスタイル  
-        C言語やそれを基に作られたC++，Java，C\#などの言語は記述の自由度が高いため，どのようなプログラムでも書こうと思えば一行で書くことができる欠点がある。可読性（読みやすさ）を高めるために一定のルールに従うことが強く推奨される。代表的なものにインデントスタイルがある。  
-        インデントとは（　字下げ　）のことで，インデントスタイルの中でも最も普及しているK&Rスタイルでは中括弧「{}」の中の記述は空白4つ分（Tabキー 1個分）を字下げするよう決められている。  
-        MonoDevelopにはオートフォーマットと呼ばれるインデントを自動的に修正する機能があり，範囲選択した後にキーボードのControl \+ I で行うことができる。
+		1. インデントスタイル  
+			C言語やそれを基に作られたC++，Java，C\#などの言語は記述の自由度が高いため，どのようなプログラムでも書こうと思えば一行で書くことができる欠点がある。可読性（読みやすさ）を高めるために一定のルールに従うことが強く推奨される。代表的なものにインデントスタイルがある。  
+			インデントとは（　字下げ　）のことで，インデントスタイルの中でも最も普及しているK&Rスタイルでは中括弧「{}」の中の記述は空白4つ分（Tabキー 1個分）を字下げするよう決められている。  
+			MonoDevelopにはオートフォーマットと呼ばれるインデントを自動的に修正する機能があり，範囲選択した後にキーボードのControl \+ I で行うことができる。
 
-        1. 自動補完（オートコンプリート）  
-        Unityでの開発を含め，現代のプログラミングでは使用できる命令の数が膨大であるため，すべてを正確に記憶して使いこなすことはほぼ不可能である。そこで，MonoDevelopを含むIDE（統合開発環境）には，入力を補助する機能が備わっている。  
-        MonoDevelopでは記述中に予測が表示され，矢印キーで候補から選択し，TabキーやEnterキーで決定ができる。
+		1. 自動補完（オートコンプリート）  
+			Unityでの開発を含め，現代のプログラミングでは使用できる命令の数が膨大であるため，すべてを正確に記憶して使いこなすことはほぼ不可能である。そこで，MonoDevelopを含むIDE（統合開発環境）には，入力を補助する機能が備わっている。  
+			MonoDevelopでは記述中に予測が表示され，矢印キーで候補から選択し，TabキーやEnterキーで決定ができる。
 
-        1. デバッグの方法  
-        プログラムの実行中に，シーンに現れないような値を確認したい場合，Debug.Logメソッドを使用する。Debug.Logの実行結果はConsole画面に表示される。Console画面は標準では画面上に無いので，画面最下部のステータスバーをクリックするか，Window -\> Consoleで開くことができる。  
-  （例1）毎フレーム「Hello」という文字列をConsoleに表示するプログラム  
-  ```cs
-  void Update () {
-    Debug.Log("Hello");
-  }
-  ```  
-        また，例文中の"Hello"を変数，プロパティ，メソッドやそれらを使った計算式に置き換えることもできる。
+		1. デバッグの方法  
+			プログラムの実行中に，シーンに現れないような値を確認したい場合，Debug.Logメソッドを使用する。Debug.Logの実行結果はConsole画面に表示される。Console画面は標準では画面上に無いので，画面最下部のステータスバーをクリックするか，Window -\> Consoleで開くことができる。  
+			（例1）毎フレーム「Hello」という文字列をConsoleに表示するプログラム  
+			```cs
+			void Update () {
+				Debug.Log("Hello");
+			}
+			```  
+			また，例文中の"Hello"を変数，プロパティ，メソッドやそれらを使った計算式に置き換えることもできる。
 
-        1. プリミティブ型  
-        C言語と同様に，int型（整数型）やfloat型（浮動小数点型）を使って変数を宣言することができる。このような基本的な型は（　プリミティブ　）型と呼ばれ，他にdouble，string，boolなどがある。プリミティブ型やメソッドを複雑に組み合わせることで，クラスなどの複合型が作られている。
+		1. プリミティブ型  
+			C言語と同様に，int型（整数型）やfloat型（浮動小数点型）を使って変数を宣言することができる。このような基本的な型は（　プリミティブ　）型と呼ばれ，他にdouble，string，boolなどがある。プリミティブ型やメソッドを複雑に組み合わせることで，クラスなどの複合型が作られている。
 
-        1. if文  
-        （例2）実行しても何も表示されないが，9行目のnumberに0以外を代入すると「Hello」という文字列をConsoleに表示するプログラム  
-  ```cs
-  public class MyScript : MonoBehaviour {
-    int number;
-    // Use this for initialization
-    void Start () {
-      number = 0;
-    }
-    // Update is called once per frame
-    void Update () {
-      if (number != 0) {
-        Debug.Log("Hello");
-      }
-    }
-  }
-  ```  
-  ※C言語と同様に「=」は代入を意味し，条件文で「等しい」を表す時は「（　==　）」を使う。
+		1. if文  
+			（例2）実行しても何も表示されないが，9行目のnumberに0以外を代入すると「Hello」という文字列をConsoleに表示するプログラム  
+			```cs
+			public class MyScript : MonoBehaviour {
+				int number;
+				// Use this for initialization
+				void Start () {
+					number = 0;
+				}
+				// Update is called once per frame
+				void Update () {
+					if (number != 0) {
+						Debug.Log("Hello");
+					}
+				}
+			}
+			```  
+			※C言語と同様に「=」は代入を意味し，条件文で「等しい」を表す時は「（　==　）」を使う。
 
-  1. this  
- スクリプト中で「this」は自分自身（のインスタンス）を表し，スクリプトが張り付けられたGameObject自身を指すと考える。※thisは省略できる。  
-  （例3）スクリプトで「this.GetComponent\<Rigidbody\>()」と書くと，スクリプトが張り付けられたGameObjectのコンポーネントのひとつであるRigidbodyを取得する意味になる。
+		1. this  
+			スクリプト中で「this」は自分自身（のインスタンス）を表し，スクリプトが張り付けられたGameObject自身を指すと考える。※thisは省略できる。  
+			（例3）スクリプトで「this.GetComponent\<Rigidbody\>()」と書くと，スクリプトが張り付けられたGameObjectのコンポーネントのひとつであるRigidbodyを取得する意味になる。
 
-1. スクリプトの具体例  
-  1. 物体の色を変更する  
-  （例3）スクリプトが張り付けられたGameObjectの色を青に変える
-  ```cs
-  void Update () {
-    this.GetComponent<MeshRenderer>().material.color = Color.blue;
-  }
-  ```
+	1. スクリプトの具体例  
+		1. 物体の色を変更する  
+			（例3）スクリプトが張り付けられたGameObjectの色を青に変える
+			```cs
+			void Update () {
+				this.GetComponent<MeshRenderer>().material.color = Color.blue;
+			}
+			```
 
-  1. 物体の位置を取得する  
-  （例4）x座標をコンソールに表示する
-  ```cs
-  void Update () {
-    Debug.Log(this.transform.position.x);
-  }
-  ```
+		1. 物体の位置を取得する  
+			（例4）x座標をコンソールに表示する
+			```cs
+			void Update () {
+				Debug.Log(this.transform.position.x);
+			}
+			```
 
-  1. キーボードの入力を取得する  
-  （例5）キーボードの「A」を押している間ずっとConsoleに「Hello」と表示する
-  ```cs
-  void Update () {
-  if (Input.GetKey(KeyCode.A)) {
-  Debug.Log("Hello");
-  }
-  }
-  ```  
-  ※14行目GetKeyをGetKeyDownに変えると押された時に一度だけ反応するようになる。
+		1. キーボードの入力を取得する  
+			（例5）キーボードの「A」を押している間ずっとConsoleに「Hello」と表示する
+			```cs
+			void Update () {
+				if (Input.GetKey(KeyCode.A)) {
+					Debug.Log("Hello");
+				}
+			}
+			```  
+			※14行目GetKeyをGetKeyDownに変えると押された時に一度だけ反応するようになる。
 
 1. 実験環境  
 
