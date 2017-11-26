@@ -7,10 +7,6 @@ public class UniversalGravitation : MonoBehaviour {
     public float G;
     public float m;
     public Vector3 v;
-
-	void Start () {
-        
-	}
 	
 	void FixedUpdate () {
         Debug.Log(Time.time);
