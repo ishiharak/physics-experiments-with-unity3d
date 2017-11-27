@@ -10,15 +10,14 @@ public class UniversalGravitation : MonoBehaviour {
     public Vector3 v;
 
     void FixedUpdate () {
-        if (!Freeze) {
-            Vector3 s = this.transform.position;
-            float r = (target.transform.position - this.transform.position).magnitude;
-            float M = target.GetComponent<UniversalGravitation>().m;
-            Vector3 a = (G * M / (r * r)) * (target.transform.position - this.transform.position).normalized;
-            v = v + a * Time.deltaTime;
-            s = s + v * Time.deltaTime;
-            this.transform.position = s;
-        }
+        if (Freeze) return;
+        Vector3 s = this.transform.position;
+        //float r = ???;
+        //float M = ???;
+        //Vector3 a = ???;
+        //v = ???;
+        //s = ???;
+        this.transform.position = s;
 	}
 
     private void OnTriggerEnter(Collider other) {
