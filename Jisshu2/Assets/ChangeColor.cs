@@ -10,7 +10,7 @@ public class ChangeColor : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-    void FixedUpdate () {
+    void Update () {
         //if (this.transform.position.y < ???) {
         //    this.GetComponent<MeshRenderer>().material.color = ???;
         //}

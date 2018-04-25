@@ -10,7 +10,7 @@ public class MyScript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
-		Debug.Log(Time.time);
+	void Update () {
+		this.GetComponent<MeshRenderer>().material.color = Color.blue;
 	}
 }

@@ -10,7 +10,7 @@ public class DisplayY : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-    void FixedUpdate () {
+    void Update () {
         //if (Input.GetKeyDown(???)) {
         //    Debug.Log(???);
         //}
