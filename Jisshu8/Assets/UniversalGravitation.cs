@@ -10,7 +10,8 @@ public class UniversalGravitation : MonoBehaviour {
     public float m;
     public Vector3 v;
     public Text text;
-    private bool flag = false;
+	public bool flag = false;
+	private float startTime = 0f;
 
     void FixedUpdate () {
         if (Freeze) return;
@@ -21,13 +22,23 @@ public class UniversalGravitation : MonoBehaviour {
         v = v + a * Time.deltaTime;
         s = s + v * Time.deltaTime;
         this.transform.position = s;
-        if(!flag) text.text = Time.time.ToString("N1") + "日";
+		if(!flag) text.text = (Time.time - startTime).ToString("N1") + "日";
 	}
 
     private void OnTriggerEnter(Collider other) {
-        flag = true;
-        text.color = Color.red;
-        Freeze = true;
-        target.GetComponent<UniversalGravitation>().Freeze = true;
+		if (other.tag == "Lap") {
+			flag = true;
+			text.color = Color.yellow;
+		} else if (other.tag == "Fall") {
+			flag = false;
+			startTime = Time.time;
+			v = Vector3.zero;
+		} else {
+			flag = true;
+			startTime = Time.time;
+			text.color = Color.red;
+			Freeze = true;
+			target.GetComponent<UniversalGravitation>().Freeze = true;
+		}
     }
 }
