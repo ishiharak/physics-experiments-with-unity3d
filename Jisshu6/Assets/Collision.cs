@@ -5,6 +5,6 @@ using UnityEngine;
 public class Collision : MonoBehaviour {
 
 	//void ??? () {
-	//	Debug.Log("Hit");
+	//	print("Hit");
 	//}
 }

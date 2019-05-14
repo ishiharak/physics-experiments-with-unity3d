@@ -21,6 +21,6 @@ public class Projectile : MonoBehaviour {
 	}
 
     void OnTriggerEnter() {
-        //Debug.Log (???);
+        //print(???);
     }
 }

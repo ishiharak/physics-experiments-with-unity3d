@@ -9,6 +9,6 @@ public class Trigger : MonoBehaviour {
 	}
 
 	//void ??? () {
-	//	Debug.Log("Hit");
+	//	print("Hit");
 	//}
 }
