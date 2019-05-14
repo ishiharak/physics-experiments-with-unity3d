@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collision : MonoBehaviour {
+public class Collision : MonoBehaviour
+{
 
-	//void ??? () {
-	//	print("Hit");
-	//}
+    //void ??? ()
+    //{
+    //	print("Hit");
+    //}
 }

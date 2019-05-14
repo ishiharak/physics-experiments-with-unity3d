@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sandbox : MonoBehaviour {
+public class Sandbox : MonoBehaviour
+{
 
-	void Start () {
-		
-	}
-	
-	void Update () {
-		
-	}
+    void Start()
+    {
+
+    }
+
+    void Update()
+    {
+
+    }
 }
