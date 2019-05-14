@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour {
 
-	// Use this for initialization
 	void Start () {
 		
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		//if (this.transform.position.y < 0f) {
 			//this.transform.position = ???;
