@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class DisplayY : MonoBehaviour {
 
-	// Use this for initialization
 	void Start () {
 		
 	}
 	
-	// Update is called once per frame
-    void Update () {
+	void Update () {
         //if (Input.GetKeyDown(???)) {
-        //    Debug.Log(???);
+        //    print(???);
         //}
 	}
 }
