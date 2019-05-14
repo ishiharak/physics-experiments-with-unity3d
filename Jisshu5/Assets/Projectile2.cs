@@ -21,7 +21,7 @@ public class Projectile2 : MonoBehaviour {
 		//y = ???;
 		this.transform.position = new Vector3(x, y, 0f);
 		if (this.transform.position.y < 0 && flag) {
-			//Debug.Log (???);
+			//print(???);
 			flag = false;
 		}
 	}
