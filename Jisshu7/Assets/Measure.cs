@@ -8,6 +8,6 @@ public class Measure : MonoBehaviour {
 	void Start () {
         Vector3 a = ObjectA.transform.position;
         Vector3 b = ObjectB.transform.position;
-        //Debug.Log(???);
+        //print(???);
 	}
 }
