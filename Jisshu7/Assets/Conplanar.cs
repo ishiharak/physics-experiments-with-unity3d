@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Conplanar : MonoBehaviour {
+public class Conplanar : MonoBehaviour
+{
     public GameObject ObjectB, ObjectC, ObjectD;
 
     void Update()

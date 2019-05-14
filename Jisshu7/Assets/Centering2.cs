@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Centering2 : MonoBehaviour {
+public class Centering2 : MonoBehaviour
+{
     public GameObject ObjectA, ObjectB;
 
     void Update()

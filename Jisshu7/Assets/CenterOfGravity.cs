@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CenterOfGravity : MonoBehaviour {
+public class CenterOfGravity : MonoBehaviour
+{
     public GameObject ObjectA, ObjectB, ObjectC, ObjectD;
 
     void Update()
