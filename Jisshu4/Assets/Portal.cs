@@ -2,18 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Portal : MonoBehaviour {
+public class Portal : MonoBehaviour
+{
+    void Start()
+    {
 
-	void Start () {
-		
-	}
-	
-	void Update () {
-		//if (this.transform.position.y < 0f) {
-			//this.transform.position = ???;
-		//}
-		//if (Input.GetKeyDown (KeyCode.Space)) {
-			//???;
-		//}
-	}
+    }
+
+    void Update()
+    {
+        //if (this.transform.position.y < 0f)
+        //{
+        //    this.transform.position = ???;
+        //}
+        //if (Input.GetKeyDown (KeyCode.Space))
+        //{
+        //    ???;
+        //}
+    }
 }

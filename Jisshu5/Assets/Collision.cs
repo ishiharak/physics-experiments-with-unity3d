@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Collision : MonoBehaviour
 {
-
     //void ??? ()
     //{
-    //	print("Hit");
+    //    print("Hit");
     //}
 }

@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CalculateFPS : MonoBehaviour {
+public class CalculateFPS : MonoBehaviour
+{
 
-	void Start () {
-        
-	}
-	
-	void FixedUpdate () {
+    void Start()
+    {
+
+    }
+
+    void FixedUpdate()
+    {
         print(Time.time);
-	}
+    }
 }

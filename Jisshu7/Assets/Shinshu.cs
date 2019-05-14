@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Shinshu : MonoBehaviour
 {
-
     void Start()
     {
 

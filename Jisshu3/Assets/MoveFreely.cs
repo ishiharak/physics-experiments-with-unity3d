@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveFreely : MonoBehaviour {
+public class MoveFreely : MonoBehaviour
+{
+    void Start()
+    {
 
-	void Start () {
-		
-	}
-	
-	void Update () {
-		
-	}
+    }
+
+    void Update()
+    {
+
+    }
 }

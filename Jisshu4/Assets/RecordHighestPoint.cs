@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RecordHighestPoint : MonoBehaviour {
+public class RecordHighestPoint : MonoBehaviour
+{
+    void Start()
+    {
 
-	void Start () {
-		
-	}
-	
-	void Update () {
-		
-	}
+    }
+
+    void Update()
+    {
+
+    }
 }

@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DisplayY : MonoBehaviour {
+public class DisplayY : MonoBehaviour
+{
 
-	void Start () {
-		
-	}
-	
-	void Update () {
-        //if (Input.GetKeyDown(???)) {
+    void Start()
+    {
+
+    }
+
+    void Update()
+    {
+        //if (Input.GetKeyDown(???))
+        //{
         //    print(???);
         //}
-	}
+    }
 }

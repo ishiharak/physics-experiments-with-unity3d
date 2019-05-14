@@ -2,18 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeepJumping : MonoBehaviour {
-	
-    void Start () {
+public class KeepJumping : MonoBehaviour
+{
+    void Start()
+    {
 
-	}
+    }
 
-	void Update () {
-		//if (???) {
-			//???
-		//}
-		//if (???) {
-			//???
-		//}
-	}
+    void Update()
+    {
+        //if (???)
+        //{
+        //    ???
+        //}
+        //if (???)
+        //{
+        //    ???
+        //}
+    }
 }

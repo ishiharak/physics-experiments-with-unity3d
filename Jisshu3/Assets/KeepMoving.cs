@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeepMoving : MonoBehaviour {
+public class KeepMoving : MonoBehaviour
+{
+    void Start()
+    {
 
-	void Start () {
-		
-	}
-	
-	void Update () {
-		//this.transform.Translate(???);
-		//if (??? > 10f) {
-		//	???
-		//}
-	}
+    }
+
+    void Update()
+    {
+        //this.transform.Translate(???);
+        //if (??? > 10f)
+        //{
+        //    ???
+        //}
+    }
 }
