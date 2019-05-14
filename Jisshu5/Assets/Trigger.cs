@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trigger : MonoBehaviour {
-	
-	void Update () {
-		this.transform.Translate(0f, -1f * Time.deltaTime, 0f);
-	}
+public class Trigger : MonoBehaviour
+{
 
-	//void ??? () {
-	//	print("Hit");
-	//}
+    void Update()
+    {
+        this.transform.Translate(0f, -1f * Time.deltaTime, 0f);
+    }
+
+    //void ??? ()
+    //{
+    //	print("Hit");
+    //}
 }
