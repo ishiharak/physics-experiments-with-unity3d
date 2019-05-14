@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Impulse3D : MonoBehaviour {
-	public float e;
-	public bool isLocked = false;
+public class Impulse3D : MonoBehaviour
+{
+    public float e;
+    public bool isLocked = false;
 
-	void OnTriggerEnter(Collider other) {
+    void OnTriggerEnter(Collider other)
+    {
         if (isLocked) return;
         //float v1 = this.GetComponent<FreeFall3D>().v;
         //float v2 = ???;
@@ -17,9 +19,10 @@ public class Impulse3D : MonoBehaviour {
         //this.GetComponent<FreeFall3D>().v = v1dash;
         //other.GetComponent<FreeFall3D>().v = ???;
         //other.GetComponent<Impulse3D>().isLocked = true;
-	}
+    }
 
-    void OnTriggerExit(Collider other) {
+    void OnTriggerExit(Collider other)
+    {
         other.GetComponent<Impulse3D>().isLocked = false;
     }
 }
